@@ -3,17 +3,16 @@
 module GameOfLife
   class Game
     def initialize
-      @board = Board.new(20)
+      @board = Board.new(30)
     end
 
     def run
-      generation = 1
       loop do
-        puts "Generation #{generation}"
         puts @board.to_s
-        generation += 1
+
         @board.generate_next_generation
-        sleep(1)
+
+        sleep(0.5)
         puts `clear`
       end
     end

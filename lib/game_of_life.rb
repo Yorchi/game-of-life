@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
-require 'board.rb'
-require 'cell.rb'
-require 'game.rb'
+require 'board'
+require 'cell'
+require 'game'
+require 'generators/neighbors'
 
 module GameOfLife
 end

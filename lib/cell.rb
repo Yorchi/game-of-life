@@ -2,7 +2,7 @@
 
 module GameOfLife
   class Cell
-    attr_reader :x, :y
+    attr_reader :x, :y, :status
 
     def initialize(x, y)
       @x = x
