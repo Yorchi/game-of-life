@@ -16,21 +16,33 @@ module GameOfLife
         @neighbors = []
 
         if has_upper_neighbors?(x)
-          @neighbors << @grid[x - 1][y - 1] if has_left_neighbors?(x, y)
-          @neighbors << @grid[x - 1][y]
-          @neighbors << @grid[x - 1][y + 1] if has_right_neighbors?(x, y)
+          @neighbors << upper_neighbors(x)[y - 1] if has_left_neighbors?(x, y)
+          @neighbors << upper_neighbors(x)[y]
+          @neighbors << upper_neighbors(x)[y + 1] if has_right_neighbors?(x, y)
         end
   
-        @neighbors << @grid[x][y - 1] if has_left_neighbors?(x, y)
-        @neighbors << @grid[x][y + 1] if has_right_neighbors?(x, y)
+        @neighbors << middle_neighbors(x)[y - 1] if has_left_neighbors?(x, y)
+        @neighbors << middle_neighbors(x)[y + 1] if has_right_neighbors?(x, y)
 
         if has_lower_neighbors?(x)
-          @neighbors << @grid[x + 1][y - 1] if has_left_neighbors?(x, y)
-          @neighbors << @grid[x + 1][y]
-          @neighbors << @grid[x + 1][y + 1] if has_right_neighbors?(x, y)
+          @neighbors << lower_neighbors(x)[y - 1] if has_left_neighbors?(x, y)
+          @neighbors << lower_neighbors(x)[y]
+          @neighbors << lower_neighbors(x)[y + 1] if has_right_neighbors?(x, y)
         end
         
         self
+      end
+
+      def upper_neighbors(x)
+        @grid[x - 1]
+      end
+
+      def middle_neighbors(x)
+        @grid[x]
+      end
+
+      def lower_neighbors(x)
+        @grid[x + 1]
       end
 
       def has_upper_neighbors?(x)
