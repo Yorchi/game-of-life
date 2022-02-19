@@ -28,8 +28,8 @@ ruby start.rb
 
 ## TODO
 
-- [] Extract Next Generation code to a Generator file
-- [] Possiblility to create initial state
+- [ ] Extract Next Generation code to a Generator file
+- [ ] Possiblility to create initial state
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
