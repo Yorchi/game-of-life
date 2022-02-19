@@ -30,6 +30,7 @@ ruby start.rb
 
 - [ ] Extract Next Generation code to a Generator file
 - [ ] Possiblility to create initial state
+- [ ] Add Specs
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
