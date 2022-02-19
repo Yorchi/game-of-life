@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+lib = File.expand_path('../lib', __FILE__)
+puts lib
+puts $LOAD_PATH
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+
+require 'game_of_life'
+
+# trap("INT") { exit }
+GameOfLife::Game.new.run 
