@@ -6,8 +6,11 @@ module GameOfLife
 
     def initialize(size)
       @size = size - 1
-      
-      @grid = (0..@size).map { |x| (0..@size).map { |y| Cell.new(x, y) } }
+      rows = cols = 0..@size
+
+      @grid = rows.map do |x|
+        cols.map { |y| Cell.new(x, y) }
+      end
     end
 
     def cells_total(size)
@@ -47,7 +50,7 @@ module GameOfLife
       end
     end
 
-    def to_s
+    def show
       grid = ''
 
       @grid.each do |row|

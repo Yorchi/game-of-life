@@ -8,7 +8,7 @@ module GameOfLife
 
     def run
       loop do
-        puts @board.to_s
+        puts @board.show
 
         @board.generate_next_generation
 
